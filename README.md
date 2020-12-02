@@ -1,2 +1,0 @@
-# ScarletWeb
-Scarlet but online 🥳
