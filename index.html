@@ -20,12 +20,29 @@ an online version of scarlet for incompatible devices ;)
   <link rel="icon" href="assets/icon.jpg">
   <link rel="stylesheet" href="framework7/css/framework7.bundle.min.css">
   <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/app.css">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Heebo:wght@500&family=Mukta:wght@500&family=Open+Sans&family=Oswald&family=Rubik&family=Ubuntu&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com"> 
 </head>
+<style>
+.date {
+    color: grey;
+    font-family: 'Heebo', sans-serif;
+    font-size: 16px;
+    padding-left: 12px;
+}
+.home {
+    color: white;
+    font-family: 'Heebo', sans-serif;
+    font-size: 30px;
+    padding-left: 12px;
+    height: 300px;
+    width: 150px;
+}
+
+</style>
 <body>
   <div id="app">
     <div class="views tabs">
@@ -33,11 +50,16 @@ an online version of scarlet for incompatible devices ;)
     <div class="tab tab-active cent" id="tab1"><br /><br /><span class="fromthedev">Welcome to Scarlet</span><br><br><img src="assets/icon.jpg" width="100px" height="100px" alt="scarlet" style="border-radius: 32%" /><br><br><span style="font-size:15px;font-family: 'Ubuntu', sans-serif;">Scarlet is an advanced appstore with all the apps you will ever need.</span><br /><br /><a href="#tab2" style="text-align: center;width:50%;margin:auto;display:block;" class="tab-link tab-link-active col button color-pink">Continue</a>
       
     </div>
-    <div class="page-content tab cent" id="tab2">  <div class="navbar navbar-large navbar-transparent"><div class="navbar navbar-large"><div class="navbar-bg"></div><div class="navbar-inner sliding"><div class="left"><a class="link back"></a></div><div class="title">Scarlet</div><!-- Large title element --><div style="color:white" class="title-large"><div style="color:white" class="title-large-text">Scarlet</div></div></div></div></div><br><br><br><br>
-  </div>
+    <div class="page-content tab" id="tab2"><br /><span id="date" class="date"></span><br><span class="home">Home</span><br><div class="cent"></div>
   <!-- JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="framework7/js/framework7.bundle.min.js"></script>
   <script src="js/routes.js"></script>
+  <script src="js/moment.js"></script>
+  <script>var swiper = app.swiper.create('.swiper-container', {
+    speed: 400,
+    spaceBetween: 100
+});
+</script>
   <script src="js/app.js"></script>
 </html>

@@ -1,6 +1,4 @@
-
 var $$ = Dom7;
-
 var app = new Framework7({
   root: '#app', // App root element
 
@@ -50,8 +48,8 @@ setTimeout(function(){
     $("#tabs").fadeIn(2000);
 }, 2500);
 
-var date = new Date().format('d f Y'); 
-console.log(date);
+document.getElementById("date").innerHTML = moment().format('D MMMM YYYY');
+
 $(document).ready(function(){
 	apps.forEach(function(v,k){
 		$(`<div class="tab cent dwnapp" id="${v.app_name}">
@@ -72,11 +70,11 @@ $(document).ready(function(){
 	<!-- Changes -->
 	<span class="changes">### Changelog ###<br />- Test<br />- Test<br /><br /></span>
 	<!-- Install Button -->
-	<a href="javascript:alert('No.')" style="text-align: center;width:80%;margin:auto;display:block;" style="border-radius: 5px;text-align: center" class="col button button-large button-fill color-pink">Install</a><br /><br /><a href="#tab2" class="tab-link tab-link-active col button color-pink">Dismiss</a>
+	<a href="javascript:alert('No.')" style="text-align: center;width:80%;margin:auto;display:block;border-radius: 5px;text-align: center" class="col button button-large button-fill color-pink">Install</a><br /><br /><a href="#tab2" class="tab-link tab-link-active col button color-pink">Dismiss</a>
 </div>`).appendTo("#tabs");
-		$(`<a href="#${v.app_name}" class="tab-link tab-link-active">${v.app_name}</a><br />`).appendTo("#tab2");
+		$(`<a href="#${v.app_name}" class="cent tab-link tab-link-active">${v.app_name}</a><br />`).appendTo("#tab2");
 	});
 });
 if (!window.navigator.standalone) {
-    document.getElementById("tab1").innerHTML = `<br /><br /><span class="fromthedev">Welcome to Scarlet</span><br><br><img src="assets/icon.jpg" width="100px" height="100px" alt="scarlet" style="border-radius: 32%" /><br><br><span style="font-size:15px;font-family: 'Ubuntu', sans-serif;">Please download the profile below.</span><br /><br /><a href="assets/Scarlet.mobileconfig" style="text-align: center;width:50%;margin:auto;display:block;" class="link external col button color-pink">Download</a>`;
+    // document.getElementById("tab1").innerHTML = `<br /><br /><span class="fromthedev">Welcome to Scarlet</span><br><br><img src="assets/icon.jpg" width="100px" height="100px" alt="scarlet" style="border-radius: 32%" /><br><br><span style="font-size:15px;font-family: 'Ubuntu', sans-serif;">Please download the profile below.</span><br /><br /><a href="assets/Scarlet.mobileconfig" style="text-align: center;width:50%;margin:auto;display:block;" class="link external col button color-pink">Download</a>`;
 }
