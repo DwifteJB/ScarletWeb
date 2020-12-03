@@ -44,6 +44,9 @@ body {
   	background-repeat: no-repeat;
   	background-size: cover;
 }
+#tabs {
+    display: none;
+}
 .center {
   display: block;
   
@@ -113,8 +116,9 @@ const apps = [{
 
 document.getElementsByTagName("body")[0].style.backgroundImage = 'url("assets/splash.jpg")';
 setTimeout(function(){ 
-    document.getElementsByTagName("body")[0].style.visibility = "visible";
     document.body.style.backgroundImage = "";
+    document.body.style.visibility = "visible";
+    $("#tabs").fadeIn(2000);
 }, 2500);
 
 
