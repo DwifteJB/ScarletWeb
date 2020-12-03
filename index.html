@@ -9,14 +9,6 @@ an online version of scarlet for incompatible devices ;)
 <html>
 <head>
   <meta charset="utf-8">
-  <!--
-  Customize this policy to fit your own app's needs. For more guidance, see:
-      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-  Some notes:
-    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-    * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-      * Enable inline JS: add 'unsafe-inline' to default-src
-  -->
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
 
@@ -44,7 +36,16 @@ body {
     -webkit-transform: translateZ(0);
     -webkit-transform: translateY(0);
     background-color: black;
+    color: white;
 }
+.center {
+  display: block;
+  
+  margin-left: auto;
+  margin-right: auto;
+  
+  width: 50%;
+} 
 div.dwnapp {
 	background-color: #000000;
 	-webkit-transform: translateZ(0);
@@ -63,35 +64,12 @@ span.fromthedev {
     font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: white;
-    position: absolute;
-    left: 185px;
-    top: 138px;
+	margin-top: 10px;
 }
 .app_title2 {
     font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: white;
-    position: absolute;
-    left: 185px;
-    top: 155px;
-}
-.changes {
-    font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
-	color: white;
-    position: absolute;
-    left: 100px;
-    top: 220px;
-}
-.install {
-    position: absolute;
-    top: 300px;
-    left: 150px;
-}
-.dismiss {
-    position: absolute;
-    top: 375px;
-    left: 150px;
 }
 </style>
 <body>
@@ -99,9 +77,8 @@ span.fromthedev {
     <!-- view inside of panel -->
     <!-- Views container -->
     <div class="views tabs">
-      <div id="tabs" class="tabs cent">
-    <!-- each tabs is a "page-content" -->
-    <div class="page-content tab tab-active" id="tab1"><span class="fromthedev" style="font-size: 14px">Scarlet Web Test<br>Created by DwifteJB</span><br><br>
+      <div id="tabs" class="tabs page-content">
+    <div class="page-content tab tab-active cent" id="tab1"><span class="fromthedev" style="font-size: 14px">Scarlet Web Test<br>Created by DwifteJB</span><br><br>
       
     </div>
   </div>
@@ -133,8 +110,7 @@ console.log("Loading Apps!");
 
 $(document).ready(function(){
 	apps.forEach(function(v,k){
-		$(`<div class="tab" id="${v.app_name}">
-      <div class="dwnapp">
+		$(`<div class="tab cent dwnapp" id="${v.app_name}">
 	<!-- Move objects down -->
 	<br /><br /><br />
 	<!-- From the developer text -->
@@ -142,13 +118,18 @@ $(document).ready(function(){
 	<span class="fromthedev">From the Developer</span>
 	<br /><br /></div>    
 	<!-- Image + Appname -->
-	<img id="pic" style="border-radius: 14%;position: absolute;left: 100px" src="${v.icon}" width="80px" height="80px" alt="Discord ICON" /><span id="bruh" class="app_title">${v.app_name}<br></span><span class="app_title2" style="color:grey">Version 1.0.0</span>
+	    <div style="display:inline-block;vertical-align:top;">
+    <img id="pic" style="border-radius: 14%" src="${v.icon}" width="80px" height="80px" alt="Discord ICON" />
+</div><div style="display:inline-block;">
+    <div style="color:black">&nbsp;</div>
+    <div><span id="bruh" class="app_title">&nbsp;${v.app_name}</span></div>
+    <div><span class="app_title2" style="color:grey">&nbsp;Version 1.0.0</span></div>
+</div><br /><br />
 	<!-- Changes -->
-	<span class="changes">### Change log ###<br />- Test<br />- Test<br /><br /></span>
+	<span class="changes">### Changelog ###<br />- Test<br />- Test<br /><br /></span>
 	<!-- Install Button -->
 	<a href="alert(1)" style="border-radius: 5px;text-align: center" class="install col button button-large button-fill color-pink">Install</a><br /><br /><a href="#tab1" class="dismiss tab-link tab-link-active col button color-pink">Dismiss</a>
-</div>
-    </div>`).appendTo("#tabs");
+</div>`).appendTo("#tabs");
 		$(`<a href="#${v.app_name}" class="tab-link tab-link-active">${v.app_name}</a><br />`).appendTo("#tab1");
 	});
 });
