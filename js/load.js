@@ -27,7 +27,7 @@ setTimeout(function(){
 
 $(document).ready(function(){
 	apps.forEach(function(v,k){
-		$(`<div class="tab cent dwnapp" id="${v.app_name}">
+		$(`<div class="page-content tab cent dwnapp" id="${v.app_name}">
 	<!-- Move objects down -->
 	<br /><br /><br />
 	<!-- From the developer text -->
