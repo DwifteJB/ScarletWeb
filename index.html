@@ -90,7 +90,7 @@ div.cent {
     <!-- Views container -->
     <div class="views tabs">
       <div id="tabs" class="tabs page-content">
-    <div class="tab tab-active cent" id="tab1"><br /><br /><span class="fromthedev">Welcome to Scarlet</span><br><br><img src="assets/icon.jpg" width="100px" height="100px" alt="scarlet" style="border-radius: 32%" /><br><br><span style="font-size:15px;font-family: 'Ubuntu', sans-serif;">Scarlet is an advanced appstore with all the apps you will ever need.</span><br /><br /><a href="#tab2" class="dismiss tab-link tab-link-active col button color-pink">Continue</a>
+    <div class="tab tab-active cent" id="tab1"><br /><br /><span class="fromthedev">Welcome to Scarlet</span><br><br><img src="assets/icon.jpg" width="100px" height="100px" alt="scarlet" style="border-radius: 32%" /><br><br><span style="font-size:15px;font-family: 'Ubuntu', sans-serif;">Scarlet is an advanced appstore with all the apps you will ever need.</span><br /><br /><a href="#tab2" style="text-align: center;width:50%;margin:auto;display:block;" class="tab-link tab-link-active col button color-pink">Continue</a>
       
     </div>
     <div class="page-content tab cent" id="tab2">  <div class="navbar navbar-large navbar-transparent"><div class="navbar navbar-large"><div class="navbar-bg"></div><div class="navbar-inner sliding"><div class="left"><a class="link back"></a></div><div class="title">Scarlet</div><!-- Large title element --><div style="color:white" class="title-large"><div style="color:white" class="title-large-text">Scarlet</div></div></div></div></div><br><br><br><br>
@@ -148,7 +148,7 @@ $(document).ready(function(){
 	<!-- Changes -->
 	<span class="changes">### Changelog ###<br />- Test<br />- Test<br /><br /></span>
 	<!-- Install Button -->
-	<a href="alert(1)" style="border-radius: 5px;text-align: center" class="install col button button-large button-fill color-pink">Install</a><br /><br /><a href="#tab2" class="dismiss tab-link tab-link-active col button color-pink">Dismiss</a>
+	<a href="alert(1)" style="text-align: center;width:80%;margin:auto;display:block;" style="border-radius: 5px;text-align: center" class="col button button-large button-fill color-pink">Install</a><br /><br /><a href="#tab2" class="tab-link tab-link-active col button color-pink">Dismiss</a>
 </div>`).appendTo("#tabs");
 		$(`<a href="#${v.app_name}" class="tab-link tab-link-active">${v.app_name}</a><br />`).appendTo("#tab2");
 	});
