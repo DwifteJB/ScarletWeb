@@ -79,34 +79,32 @@ span.fromthedev {
     font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: white;
-    position: absolute;
+	text-align: center;
     left: 100px;
     top: 220px;
 }
 .install {
     position: absolute;
     top: 300px;
+    left: 150px;
 }
 .dismiss {
     position: absolute;
     top: 375px;
+    left: 150px;
 }
 </style>
 <body>
-<div class="page-content dwnapp">
-	<!-- Move objects down -->
-	<br /><br /><br />
-	<!-- From the developer text -->
-	<div class="cent">
-	<span class="fromthedev">From the Developer</span>
-	<br /><br /></div>    
-	<!-- Image + Appname -->
-	<img id="pic" style="position: absolute;left: 100px" src="https://www.freepnglogos.com/uploads/discord-logo-png/concours-discord-cartes-voeux-fortnite-france-6.png" width="80px" height="80px" alt="Discord ICON" /><span id="bruh" class="app_title">Discord<br></span><span class="app_title2" style="color:grey">Version 1.0.0</span>
-	<!-- Changes -->
-	<span class="changes">### Change log ###<br />- Test<br />- Test<br /><br /></span>
-	<!-- Install Button -->
-	<button onclick="alert(1)" style="border-radius: 5px" class="install col button button-large button-fill color-pink">Install</button><br /><br /><button onclick="alert(1)" class="dismiss col button color-pink">Dismiss</button>
-</div>
+  <div id="app">
+    <!-- view inside of panel -->
+    <!-- Views container -->
+    <div class="views tabs">
+      <div id="tabs" class="tabs cent">
+    <!-- each tabs is a "page-content" -->
+    <div class="page-content tab tab-active" id="tab1"><span class="fromthedev" style="font-size: 14px">Scarlet Web Test<br>Created by DwifteJB</span><br><br>
+      
+    </div>
+  </div>
   <!-- Framework7 -->
   <script src="framework7/js/framework7.bundle.min.js"></script>
   <script src="js/routes.js"></script>
@@ -114,12 +112,45 @@ span.fromthedev {
   <!-- JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-// https://app.eonhubapp.com/images/icons/ 
-// https://eonhubapp.com/all.json
+const apps = [{
+"app_name": "Unc0ver",
+"author": "pwn20wnd",
+"icon": "https://github.com/pwn20wndstuff/Undecimus/raw/master/Undecimus/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60%403x.png",
+"signed_by": "Library++",
+"plist_url": "https://url_to_plist.com",
+"screenshot": ["url_to_screenshot", "url_to_screenshot", "url_to_screenshot"]
+},
+{
+"app_name": "Odyssey",
+"author": "Odyssey Team",
+"icon": "https://iosninja.io/img/ipas/odyssey.jpg",
+"signed_by": "Jailbreaks.app",
+"plist_url": "https://url_to_plist.com",
+"screenshot": ["url_to_screenshot", "url_to_screenshot", "url_to_screenshot"]
+}];
 
-var staticUrl = 'https://eonhubapp.com/all.json';
-$.getJSON(staticUrl, function(data) {
-  console.log(data);
+console.log("Loading Apps!");
+
+$(document).ready(function(){
+	apps.forEach(function(v,k){
+		$(`<div class="tab" id="${v.app_name}">
+      <div class="dwnapp">
+	<!-- Move objects down -->
+	<br /><br /><br />
+	<!-- From the developer text -->
+	<div class="cent">
+	<span class="fromthedev">From the Developer</span>
+	<br /><br /></div>    
+	<!-- Image + Appname -->
+	<img id="pic" style="border-radius: 14%;position: absolute;left: 100px" src="${v.icon}" width="80px" height="80px" alt="Discord ICON" /><span id="bruh" class="app_title">${v.app_name}<br></span><span class="app_title2" style="color:grey">Version 1.0.0</span>
+	<!-- Changes -->
+	<span class="changes">### Change log ###<br />- Test<br />- Test<br /><br /></span>
+	<!-- Install Button -->
+	<a href="alert(1)" style="border-radius: 5px;text-align: center" class="install col button button-large button-fill color-pink">Install</a><br /><br /><a href="#tab1" class="dismiss tab-link tab-link-active col button color-pink">Dismiss</a>
+</div>
+    </div>`).appendTo("#tabs");
+		$(`<a href="#${v.app_name}" class="tab-link tab-link-active">${v.app_name}</a><br />`).appendTo("#tab1");
+	});
 });
 
 </script>
