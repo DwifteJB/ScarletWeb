@@ -89,7 +89,7 @@ span.fromthedev {
 }
 .dismiss {
     position: absolute;
-    top: 350px;
+    top: 375px;
 }
 </style>
 <body>
@@ -99,13 +99,13 @@ span.fromthedev {
 	<!-- From the developer text -->
 	<div class="cent">
 	<span class="fromthedev">From the Developer</span>
-	<br /><br /></div>
+	<br /><br /></div>    
 	<!-- Image + Appname -->
-	<img style="position: absolute;left: 100px" src="https://www.freepnglogos.com/uploads/discord-logo-png/concours-discord-cartes-voeux-fortnite-france-6.png" width="80px" height="80px" alt="Discord ICON" /><span class="app_title">Discord<br></span><span class="app_title2" style="color:grey">Version 1.0.0</span>
+	<img id="pic" style="position: absolute;left: 100px" src="https://www.freepnglogos.com/uploads/discord-logo-png/concours-discord-cartes-voeux-fortnite-france-6.png" width="80px" height="80px" alt="Discord ICON" /><span id="bruh" class="app_title">Discord<br></span><span class="app_title2" style="color:grey">Version 1.0.0</span>
 	<!-- Changes -->
 	<span class="changes">### Change log ###<br />- Test<br />- Test<br /><br /></span>
 	<!-- Install Button -->
-	<button onclick="alert(1)" class="install col button button-fill color-pink">Install</button><br /><br /><button onclick="alert(1)" class="dismiss col button color-pink">Dismiss</button>
+	<button onclick="alert(1)" style="border-radius: 5px" class="install col button button-large button-fill color-pink">Install</button><br /><br /><button onclick="alert(1)" class="dismiss col button color-pink">Dismiss</button>
 </div>
   <!-- Framework7 -->
   <script src="framework7/js/framework7.bundle.min.js"></script>
@@ -113,4 +113,14 @@ span.fromthedev {
   <script src="js/app.js"></script>
   <!-- JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+// https://app.eonhubapp.com/images/icons/ 
+// https://eonhubapp.com/all.json
+
+var staticUrl = 'https://eonhubapp.com/all.json';
+$.getJSON(staticUrl, function(data) {
+  console.log(data);
+});
+
+</script>
 </html>
