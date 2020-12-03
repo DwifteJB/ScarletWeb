@@ -38,7 +38,6 @@ body {
     background-color: black;
     color: white;
     visibility: hidden;
-    background-image: url("assets/splash.jpg");
     width: 100%;
     height: 100%;
     background-position: center;
@@ -112,10 +111,10 @@ const apps = [{
 }];
 
 
-console.log("Loading Apps!");
+document.getElementsByTagName("body")[0].style.backgroundImage = 'url("assets/splash.jpg")';
 setTimeout(function(){ 
     document.getElementsByTagName("body")[0].style.visibility = "visible";
-    document.getElementsByTagName("body")[0].style.backgroundImage = "";
+    document.body.style.backgroundImage = "";
 }, 2500);
 
 
