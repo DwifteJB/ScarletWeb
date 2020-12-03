@@ -4,8 +4,8 @@ var app = new Framework7({
   root: '#app', // App root element
 
 
-  name: 'Scarlet', // App name
-  theme: 'auto', // Automatic theme detection
+  name: 'Scarlet Online', // App name
+  theme: 'ios', // Automatic theme detection
   // App root data
   data() {
     return {
