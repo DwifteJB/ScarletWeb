@@ -50,7 +50,8 @@ setTimeout(function(){
     $("#tabs").fadeIn(2000);
 }, 2500);
 
-
+var date = new Date().format('d f Y'); 
+console.log(date);
 $(document).ready(function(){
 	apps.forEach(function(v,k){
 		$(`<div class="tab cent dwnapp" id="${v.app_name}">
