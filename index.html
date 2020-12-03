@@ -30,6 +30,7 @@ an online version of scarlet for incompatible devices ;)
   <link rel="preconnect" href="https://fonts.gstatic.com"> 
   <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 <style>
 body {
@@ -85,7 +86,10 @@ span.fromthedev {
     <!-- Views container -->
     <div class="views tabs">
       <div id="tabs" class="tabs page-content">
-    <div class="page-content tab tab-active cent" id="tab1"><span class="fromthedev" style="font-size: 14px">Scarlet Web Test<br>Created by DwifteJB</span><br><br>
+    <div class="page-content tab tab-active cent" id="tab1"><br /><br /><span class="fromthedev">Welcome to Scarlet</span><br><br><img src="assets/icon.jpg" width="100px" height="100px" alt="scarlet" style="border-radius: 32%" /><br><br><span style="font-size:15px;font-family: 'Ubuntu', sans-serif;">Scarlet is an advanced appstore with all the apps you will ever need.</span><br /><br /><a href="#tab2" class="dismiss tab-link tab-link-active col button color-pink">Continue</a>
+      
+    </div>
+    <div class="page-content tab cent" id="tab2"><span class="fromthedev" style="font-size: 14px">Scarlet Web Test<br>Created by DwifteJB</span><br><br>
       
     </div>
   </div>
@@ -133,7 +137,7 @@ $(document).ready(function(){
 	<br /><br /></div>    
 	<!-- Image + Appname -->
 	    <div style="display:inline-block;vertical-align:top;">
-    <img id="pic" style="border-radius: 14%" src="${v.icon}" width="80px" height="80px" alt="Discord ICON" />
+    <img id="pic" style="border-radius: 30%" src="${v.icon}" width="80px" height="80px" alt="Discord ICON" />
 </div><div style="display:inline-block;">
     <div style="color:black">&nbsp;</div>
     <div><span id="bruh" class="app_title">&nbsp;${v.app_name}</span></div>
@@ -142,9 +146,9 @@ $(document).ready(function(){
 	<!-- Changes -->
 	<span class="changes">### Changelog ###<br />- Test<br />- Test<br /><br /></span>
 	<!-- Install Button -->
-	<a href="alert(1)" style="border-radius: 5px;text-align: center" class="install col button button-large button-fill color-pink">Install</a><br /><br /><a href="#tab1" class="dismiss tab-link tab-link-active col button color-pink">Dismiss</a>
+	<a href="alert(1)" style="border-radius: 5px;text-align: center" class="install col button button-large button-fill color-pink">Install</a><br /><br /><a href="#tab2" class="dismiss tab-link tab-link-active col button color-pink">Dismiss</a>
 </div>`).appendTo("#tabs");
-		$(`<a href="#${v.app_name}" class="tab-link tab-link-active">${v.app_name}</a><br />`).appendTo("#tab1");
+		$(`<a href="#${v.app_name}" class="tab-link tab-link-active">${v.app_name}</a><br />`).appendTo("#tab2");
 	});
 });
 
